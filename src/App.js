@@ -1,4 +1,5 @@
 import './index.css';
+import emailjs from 'emailjs-com';
 
 function App() {
   return (
@@ -58,16 +59,35 @@ function App() {
   <h2>Contact Me</h2>
   <p>You can reach me through this form:</p>
 
-  <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
-    <input type="text" placeholder="Your Name" required />
-    <input type="email" placeholder="Your Email" required />
-    <textarea placeholder="Your Message" rows="5" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
+  
 
-  <p className="resume-note">
-    Want my resume? Just send a message above — I’ll reply with it personally 💼
-  </p>
+<form
+  className="contact-form"
+  onSubmit={(e) => {
+    e.preventDefault();
+    emailjs.sendForm(
+      'service_alhntba',
+      'template_reit6sp',
+      e.target,
+      't8ssIym5I_iOx1dNm'
+    )
+    .then((result) => {
+      alert('✅ Message sent successfully!');
+      e.target.reset();
+    })
+    .catch((error) => {
+      alert('❌ Failed to send message. Try again.');
+      console.error(error);
+    });
+  }}
+>
+  <input type="text" name="name" placeholder="Your Name" required />
+  <input type="email" name="email" placeholder="Your Email" required />
+  <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+  <button type="submit">Send Message</button>
+</form>
+
+
 
   <div className="social-links">
     <a href="https://github.com/Bhanuteja12-coder" target="_blank" rel="noreferrer">GitHub</a>
