@@ -10,7 +10,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 5rem 5rem 5rem 5rem;
+  border: #00ffd5;
   background-color: #111;
   color: #fff;
 }
@@ -292,3 +293,50 @@
   transition: all 0.2s ease-in-out;
 }
 
+@keyframes scrollText {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.scroll-banner {
+  white-space: nowrap;
+  overflow: hidden;
+  background: #4f46e5;
+  color: white;
+  padding: 0.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  position: relative;
+}
+
+.scroll-banner span {
+  display: inline-block;
+  animation: scrollText 15s linear infinite;
+}
+
+@keyframes scrollBanner {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  background: linear-gradient(to right, #4f46e5, #4338ca); /* Indigo Gradient */
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.6rem 0;
+  position: relative;
+  z-index: 50;
+}
+
+.marquee-text {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scrollBanner 26s linear infinite;
+}

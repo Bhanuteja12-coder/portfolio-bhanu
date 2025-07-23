@@ -48,6 +48,9 @@ useEffect(() => {
 
   return (
     <div>
+
+      
+
       {/* Navbar */}
       
 
@@ -55,7 +58,7 @@ useEffect(() => {
 <nav className="flex items-center px-10 py-4 bg-black shadow-md text-white">
   {/* Logo + Links in a row */}
   <div className="flex items-center gap-10">
-    <div className="logo text-2xl font-bold">Bhanuteja</div>
+    
     <ul className="flex gap-8 text-lg font-semibold nav-links">
       <li><a href="#hero" className="hover:text-indigo-400">Home</a></li>
       <li><a href="#about" className="hover:text-green-400">About</a></li>
@@ -64,6 +67,15 @@ useEffect(() => {
     </ul>
   </div>
 </nav>
+<div className="scroll-banner">
+  <span>🚀 Welcome to Bhanu Teja's Portfolio! Explore Projects, Contact Me, and Let's Connect!</span>
+</div>
+<div className="marquee-container">
+  <div className="marquee-text">
+    🚀  — Full Stack Developer | React ⚛️ | Django 🐍 | MERN Stack 💻 | Let's Build the Future Together! 🌐
+  </div>
+</div>
+
 
 
 
